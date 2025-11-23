@@ -1,231 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News - SuperHorizon.Studios</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="news-styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horizon News</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="news.css">
 </head>
+
 <body>
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo">SuperHorizon.Studios</a>
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html#home" class="nav-link">Home</a></li>
-        <li><a href="index.html#game" class="nav-link">Our Game</a></li>
-        <li><a href="index.html#about" class="nav-link">About</a></li>
-        <li><a href="news.html" class="nav-link active">News</a></li>
-        <li><a href="support.html" class="nav-link">Support</a></li>
-      </ul>
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+  <!-- Navigation Bar -->
+  <header>
+    <div class="header-content">
+      <h1>SuperHorizon.Studios</h1>
     </div>
-  </nav>
+    <nav>
+      <a href="Homepage.html">Home</a>
+      <li class="dropdown">
+        <a href="#" class="dropdown-btn" aria-label="Social Links">Social ▼</a>
+        <ul class="dropdown-content">
+          <li><a href="https://twitter.com" target="_blank" aria-label="Twitter">Twitter (X)</a></li>
+          <li><a href="https://discord.gg/G2yUa2jWfk" target="_blank" aria-label="Discord">Discord</a></li>
+          <li><a href="https://instagram.com" target="_blank" aria-label="Instagram">Instagram</a></li>
+          <li><a href="https://youtu.be/XO8wew38VM8?si=K4_rpr5fv3_FuYKr" target="_blank" aria-label="YouTube">YouTube</a></li>
+          <li><a href="Community.html" aria-label="Community">Community</a></li>
+        </ul>
+      </li>
+      <a href="Support.html">Support</a>
 
-  <!-- Hero Banner -->
-  <section class="news-hero">
-    <div class="news-hero-content">
-      <h1>Latest News</h1>
-      <p>Stay updated with the latest developments from SuperHorizon Studios</p>
-    </div>
-  </section>
+        </ul>
+      </li>
+    </nav>
+  </header>
 
-<!-- Featured News -->
-<section class="featured-news">
-  <div class="featured-article-vertical">
-
-    <!-- Big Cinematic Image -->
-    <div class="featured-image-vertical">
-      <span class="news-badge">Featured</span>
-      <img src="/images/news.png" alt="Rahasya Cinematic Banner">
-    </div>
-
-    <!-- Text Completely Below Image -->
-    <div class="featured-content-vertical">
-      <span class="news-date">November 20, 2025</span>
-
-      <h2>Rahasya – A New Indian Horror Experience</h2>
-
-      <p>
-        We’re excited to share a first look at Rahasya, our upcoming horror game
-        set in an old Indian haveli in 1992. This project is close to our hearts,
-        built around the atmosphere and tension we’ve grown up hearing in family
-        stories and local folklore.
-      </p>
-
-      <p>
-        Rahasya doesn’t focus on loud scares or exaggerated moments. Instead, it
-        pulls you into a quiet, uneasy world where the house feels alive and every
-        sound keeps you alert. The experience is designed to feel grounded,
-        personal, and deeply Indian.
-      </p>
-
-      <p>
-        We’re putting a lot of attention into sound, visuals, and mood to make
-        the haveli feel real — and the mystery inside it stay with you long after
-        you stop playing.
-      </p>
-
-      <p>
-        This is just the beginning. More updates will follow as development progresses.
-      </p>
-
-      <a href="#" class="read-more">Read Full Article →</a>
-    </div>
-
-  </div>
-</section>
-
-
-  <!-- News Grid -->
-  <section class="news-grid">
-    <div class="section-container">
-      <h2 class="section-title">Development Updates</h2>
-      
-      <div class="news-cards">
-        <!-- <article class="news-card">
-          <div class="news-image">
-            <img src="/api/placeholder/400/300" alt="Haveli Recreation">
-            <span class="category">Development</span>
-          </div>
-          <div class="news-content">
-            <span class="news-date">November 15, 2025</span>
-            <h3>Recreating an Authentic 1992 Indian Haveli</h3>
-            <p>
-              Discover how our team is meticulously recreating period-accurate details to bring the old haveli to life. From architecture to furniture, every element tells a story.
-            </p>
-            <a href="#" class="read-more">Read More →</a>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <div class="news-image">
-            <img src="/api/placeholder/400/300" alt="Sound Design">
-            <span class="category">Audio</span>
-          </div>
-          <div class="news-content">
-            <span class="news-date">November 10, 2025</span>
-            <h3>The Sound of Fear: Designing Atmospheric Audio</h3>
-            <p>
-              Learn about our approach to sound design in Rahasya. How we're using audio to create tension without relying on cheap jump scares.
-            </p>
-            <a href="#" class="read-more">Read More →</a>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <div class="news-image">
-            <img src="/api/placeholder/400/300" alt="Indian Folklore">
-            <span class="category">Story</span>
-          </div>
-          <div class="news-content">
-            <span class="news-date">November 5, 2025</span>
-            <h3>Drawing from Indian Folklore and Family Stories</h3>
-            <p>
-              The inspiration behind Rahasya comes from real Indian folklore and family stories passed down through generations. Here's what influenced our narrative.
-            </p>
-            <a href="#" class="read-more">Read More →</a>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <div class="news-image">
-            <img src="/api/placeholder/400/300" alt="Game Design">
-            <span class="category">Design</span>
-          </div>
-          <div class="news-content">
-            <span class="news-date">October 30, 2025</span>
-            <h3>Psychological Horror: Creating Dread Without Jump Scares</h3>
-            <p>
-              Our philosophy on horror game design. Why we chose atmosphere and tension over traditional horror tropes.
-            </p>
-            <a href="#" class="read-more">Read More →</a>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <div class="news-image">
-            <img src="/api/placeholder/400/300" alt="Studio Update">
-            <span class="category">Company</span>
-          </div>
-          <div class="news-content">
-            <span class="news-date">October 25, 2025</span>
-            <h3>Behind the Scenes: Building SuperHorizon Studios</h3>
-            <p>
-              Meet the team bringing Rahasya to life. Learn about our journey from concept to development and what drives us.
-            </p>
-            <a href="#" class="read-more">Read More →</a>
-          </div>
-        </article> -->
-
-        <article class="news-card">
-          <div class="news-image">
-            <img src="/images/rahasya-main.jpg" alt="Early 2026">
-            <span class="category">Announcement</span>
-          </div>
-          <div class="news-content">
-            <span class="news-date">October 20, 2025</span>
-            <h3>Rahasya Launching Early 2026</h3>
-            <p>
-              We're excited to announce that Rahasya will be launching in early 2026. Stay tuned for more specific release information.
-            </p>
-            <a href="#" class="read-more">Read More →</a>
-          </div>
-        </article>
-      </div>
+  <!-- News Section -->
+  <section class="news-section">
+    <h2>Latest News</h2>
+    <div class="news-grid">
+      <article>
+        <img src="/Group_1.png" alt="News 1">
+        <h3>Rev Xtream relase date </h3>
+        <p>Get ready! Rev Xtream is racing toward a 2025 release, with the SuperHorizon team working non-stop, 24/7, to deliver the ultimate racing experience!</p>
+        <a href="news1.html">Read More</a>
+      </article>
+    <!--  <article>
+        <img src="news-image2.jpg" alt="News 2">
+        <h3>News Title 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis nunc neque.</p>
+        <a href="news2.html">Read More</a>
+      </article>
+      <article>
+        <img src="news-image3.jpg" alt="News 3">
+        <h3>News Title 3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis nunc neque.</p>
+        <a href="news3.html">Read More</a>
+      </article>
     </div>
   </section>
 
-  <!-- Newsletter Signup -->
-  <section class="newsletter-section">
-    <div class="section-container">
-      <div class="newsletter-box">
-        <h2>Stay in the Loop</h2>
-        <p>Subscribe to our newsletter for exclusive updates, early access, and behind-the-scenes content about Rahasya</p>
-        <form class="newsletter-form-large">
-          <input type="email" placeholder="Enter your email address" required>
-          <button type="submit">Subscribe Now</button>
-        </form>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>SuperHorizon.Studios</h3>
-        <p>Gaming Beyond Imagination's Horizon</p>
-      </div>
-      <div class="footer-section">
-        <h4>Connect</h4>
-        <div class="social-links">
-          <a href="https://twitter.com" target="_blank">Twitter</a>
-          <a href="https://discord.gg/G2yUa2jWfk" target="_blank">Discord</a>
-          <a href="https://instagram.com" target="_blank">Instagram</a>
-          <a href="https://youtu.be/XO8wew38VM8?si=K4_rpr5fv3_FuYKr" target="_blank">YouTube</a>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <div class="social-links">
-          <a href="index.html">Home</a>
-          <a href="news.html">News</a>
-          <a href="support.html">Support</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 SuperHorizon Studios. All Rights Reserved.</p>
-    </div>
+--!>
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 SuperHorizon Studios. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
+
 </html>
