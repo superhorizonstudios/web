@@ -1,71 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support - SuperHorizon Studios</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="Support.css">
+  <title>Support - SuperHorizon.Studios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="support-styles.css">
 </head>
-
 <body>
-  <header>
-    <div class="header-content">
-      <h1>SuperHorizon.Studios</h1>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">SuperHorizon.Studios</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html#home" class="nav-link">Home</a></li>
+        <li><a href="index.html#games" class="nav-link">Games</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="news.html" class="nav-link">News</a></li>
+        <li><a href="support.html" class="nav-link active">Support</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-    <nav>
-      <a href="Homepage.html">Home</a>
-      <a href="news.html">News</a>
-      <a href="Community.html">Community</a>
-      <a href="Support.html" class="active">Support</a>
-    </nav>
-  </header>
+  </nav>
 
-  <main>
-    <section class="support-intro">
-      <h2>How Can We Help You?</h2>
-      <p>We're here to assist you with any issues or inquiries. Select a category below or contact us directly.</p>
-    </section>
+  <!-- Hero Section -->
+  <section class="support-hero">
+    <div class="support-hero-content">
+      <h1>How Can We Help?</h1>
+      <p>Get assistance with technical issues, account management, or general inquiries</p>
+    </div>
+  </section>
 
-    <section class="support-options">
-      <div class="option">
-        <h3>Technical Support</h3>
-        <p>Experiencing issues with our platform? We're here to help.</p>
-        <a href="#contact-form">Contact Us</a>
+  <!-- Quick Support Options -->
+  <section class="support-options">
+    <div class="section-container">
+      <div class="options-grid">
+        <div class="support-card">
+          <div class="support-icon">🎮</div>
+          <h3>Technical Support</h3>
+          <p>Having issues with our games or platform? We're here to help troubleshoot and resolve technical problems.</p>
+          <a href="#contact-form" class="support-btn">Get Help</a>
+        </div>
+
+        <div class="support-card">
+          <div class="support-icon">👤</div>
+          <h3>Account Support</h3>
+          <p>Need assistance with your account settings, security, or profile management? Reach out to our team.</p>
+          <a href="#contact-form" class="support-btn">Contact Us</a>
+        </div>
+
+        <div class="support-card">
+          <div class="support-icon">💬</div>
+          <h3>Community Forums</h3>
+          <p>Join our community discussions, share feedback, and connect with other players and developers.</p>
+          <a href="https://discord.gg/G2yUa2jWfk" target="_blank" class="support-btn">Join Discord</a>
+        </div>
       </div>
-      <div class="option">
-        <h3>Account Support</h3>
-        <p>Need help managing your account? Reach out to our team.</p>
-        <a href="#contact-form">Get Help</a>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="section-container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      
+      <div class="faq-container">
+
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What platforms will your games be available on?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Our games are being developed for PC, PlayStation 5, and Xbox Series X/S. We're also exploring possibilities for additional platforms based on community feedback and technical feasibility.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How can I join the beta testing program?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Beta testing opportunities will be announced through our newsletter and social media channels. Make sure to subscribe to our newsletter to be among the first to know when beta sign-ups open!</p>
+          </div>
+        </div>
+
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How can I report bugs or technical issues?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You can report bugs through our contact form below, our Discord community, or directly through the in-game bug reporting tool. Please include as much detail as possible, including your system specifications and steps to reproduce the issue.</p>
+          </div>
+        </div>
       </div>
-      <div class="option">
-        <h3>FAQ</h3>
-        <p>Find answers to common questions in our FAQ section.</p>
-        <a href="faq.html">View FAQs</a>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section id="contact-form" class="contact-section">
+    <div class="section-container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>Can't find what you're looking for? Send us a message and we'll get back to you as soon as possible.</p>
+          
+          <div class="info-item">
+            <span class="info-icon">📧</span>
+            <div>
+              <h4>Email</h4>
+              <p>support@superhorizon.studio</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon">⏱️</span>
+            <div>
+              <h4>Response Time</h4>
+              <p>Within 24-48 hours</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon">🌍</span>
+            <div>
+              <h4>Location</h4>
+              <p>Kota, Rajasthan, India</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Your full name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category *</label>
+            <select id="category" name="category" required>
+              <option value="">Select a category</option>
+              <option value="technical">Technical Support</option>
+              <option value="account">Account Issues</option>
+              <option value="general">General Inquiry</option>
+              <option value="feedback">Feedback</option>
+              <option value="careers">Careers</option>
+              <option value="press">Press/Media</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="6" required placeholder="Describe your issue or inquiry in detail..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact-form" class="contact-form">
-      <h2>Contact Us</h2>
-      <form>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-
-        <label for="issue">Issue</label>
-        <textarea id="issue" name="issue" placeholder="Describe your issue here..." rows="5" required></textarea>
-
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2024 SuperHorizon Studios. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>SuperHorizon.Studios</h3>
+        <p>Gaming Beyond Imagination's Horizon</p>
+      </div>
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <div class="social-links">
+          <a href="https://twitter.com" target="_blank">Twitter</a>
+          <a href="https://discord.gg/G2yUa2jWfk" target="_blank">Discord</a>
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://youtu.be/XO8wew38VM8?si=K4_rpr5fv3_FuYKr" target="_blank">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <div class="social-links">
+          <a href="index.html">Home</a>
+          <a href="news.html">News</a>
+          <a href="support.html">Support</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 SuperHorizon Studios. All Rights Reserved.</p>
+    </div>
   </footer>
-</body>
 
+  <script src="script.js"></script>
+  <script src="support-script.js"></script>
+</body>
 </html>
