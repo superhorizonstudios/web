@@ -67,7 +67,7 @@
   </section>
 
   <!-- NEW: Video & Wishlist Section -->
-  <section class="trailer-section">
+  <section id="trailer" class="trailer-section">
     <div class="section-container">
       <div class="trailer-badge">🎮 Now Live on Steam</div>
       <h2 class="section-title">Watch the Official Trailer</h2>
@@ -76,7 +76,7 @@
       <div class="video-container">
         <!-- Replace XO8wew38VM8 with your actual video ID -->
         <iframe 
-          src="https://youtu.be/qNNOlWDwyU0?si=DLBVvlR31e037Qyi" 
+          src="https://www.youtube.com/embed/qNNOlWDwyU0" 
           title="Rahasya Official Trailer" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -84,8 +84,8 @@
         </iframe>
       </div>
 
-      <div class="wishlist-cta">
-        <a href="https://store.steampowered.com/app/4280830/Rahasya" target="_blank" rel="noopener noreferrer" class="steam-button" id="steam-wishlist-btn">
+      <div class="steam-cta-section">
+        <a href="https://store.steampowered.com/app/4280830/Rahasya" target="_blank" rel="noopener noreferrer" class="steam-wishlist-btn">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
           </svg>
@@ -117,7 +117,7 @@
           <p class="game-description">
             We're putting a lot of attention into sound, visuals, and mood to make the haveli feel real—and the mystery inside it stay with you long after you stop playing. The story doesn't give away everything, and the ending is intentionally left open for your interpretation.
           </p>
-          <button class="game-button" id="watch-trailer-btn">Watch Trailer</button>
+          <a href="#trailer" class="game-button">Watch Trailer</a>
         </div>
       </div>
     </div>
