@@ -53,8 +53,7 @@
   padding: 4rem 0;
 }
 
-/* NEW VERTICAL FEATURED ARTICLE */
-
+/* VERTICAL FEATURED ARTICLE */
 .featured-article-vertical {
   max-width: 1200px;
   margin: 0 auto;
@@ -114,7 +113,63 @@
   margin-bottom: 1rem;
 }
 
-/* Responsive */
+/* NEW: Steam CTA Section in News */
+.steam-cta-section {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.steam-wishlist-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #1b2838 0%, #2a475e 100%);
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(27, 40, 56, 0.4);
+}
+
+.steam-wishlist-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(27, 40, 56, 0.6);
+  background: linear-gradient(135deg, #2a475e 0%, #1b2838 100%);
+}
+
+.steam-wishlist-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.watch-trailer-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.watch-trailer-btn:hover {
+  background: var(--secondary-color);
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(255, 127, 0, 0.4);
+}
+
+/* Responsive Featured Article */
 @media (max-width: 768px) {
   .featured-image-vertical {
     height: 350px;
@@ -127,24 +182,18 @@
   .featured-content-vertical h2 {
     font-size: 1.9rem;
   }
-}
 
+  .steam-cta-section {
+    flex-direction: column;
+  }
 
-.news-badge {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: var(--secondary-color);
-  color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 25px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-}
-
-.featured-content {
-  padding: 3rem;
+  .steam-wishlist-btn,
+  .watch-trailer-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+  }
 }
 
 .news-date {
@@ -220,10 +269,18 @@
   box-shadow: 0 20px 40px rgba(255, 127, 0, 0.2);
 }
 
+.news-card.featured-card {
+  grid-column: span 2;
+}
+
 .news-image {
   position: relative;
   height: 450px;
   overflow: hidden;
+}
+
+.news-card.featured-card .news-image {
+  height: 500px;
 }
 
 .news-image img {
@@ -373,6 +430,10 @@
 
   .news-cards {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .news-card.featured-card {
+    grid-column: span 1;
   }
 }
 
