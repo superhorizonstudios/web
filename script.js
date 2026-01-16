@@ -104,9 +104,10 @@ gameCards.forEach(card => {
 });
 
 // NEW: Watch Trailer Button Handler
-const gameButton = document.querySelector('.game-button');
+const gameButton = document.getElementById('watch-trailer-btn');
 if (gameButton) {
-  gameButton.addEventListener('click', () => {
+  gameButton.addEventListener('click', (e) => {
+    e.preventDefault();
     // Scroll to trailer section
     const trailerSection = document.querySelector('.trailer-section');
     if (trailerSection) {
@@ -119,16 +120,20 @@ if (gameButton) {
   });
 }
 
-// NEW: Steam Button Click Handler
-const steamButtons = document.querySelectorAll('.steam-button');
-steamButtons.forEach(button => {
-  button.addEventListener('click', (e) => {
-    // The link will work normally, but you can add analytics here
+// NEW: Steam Button Click Handler (for analytics tracking)
+const steamButton = document.getElementById('steam-wishlist-btn');
+if (steamButton) {
+  steamButton.addEventListener('click', (e) => {
+    // Check if it's the placeholder link
+    if (steamButton.href.includes('YOUR_STEAM_APP_ID')) {
+      e.preventDefault();
+      alert('Please add your Steam App ID to the href in index.html!\n\nReplace:\nhref="https://store.steampowered.com/app/YOUR_STEAM_APP_ID"\n\nWith your actual Steam app URL.');
+      return;
+    }
+    // Log for analytics
     console.log('Steam wishlist button clicked');
-    // Example: Track with analytics
-    // gtag('event', 'click', { 'event_category': 'Steam', 'event_label': 'Wishlist Button' });
   });
-});
+}
 
 // Cursor Glow Effect (Optional Enhancement)
 document.addEventListener('mousemove', (e) => {
