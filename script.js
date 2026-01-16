@@ -103,6 +103,33 @@ gameCards.forEach(card => {
   });
 });
 
+// NEW: Watch Trailer Button Handler
+const gameButton = document.querySelector('.game-button');
+if (gameButton) {
+  gameButton.addEventListener('click', () => {
+    // Scroll to trailer section
+    const trailerSection = document.querySelector('.trailer-section');
+    if (trailerSection) {
+      const offsetTop = trailerSection.offsetTop - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  });
+}
+
+// NEW: Steam Button Click Handler
+const steamButtons = document.querySelectorAll('.steam-button');
+steamButtons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    // The link will work normally, but you can add analytics here
+    console.log('Steam wishlist button clicked');
+    // Example: Track with analytics
+    // gtag('event', 'click', { 'event_category': 'Steam', 'event_label': 'Wishlist Button' });
+  });
+});
+
 // Cursor Glow Effect (Optional Enhancement)
 document.addEventListener('mousemove', (e) => {
   const glow = document.createElement('div');
