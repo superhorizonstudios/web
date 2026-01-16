@@ -261,6 +261,8 @@ h2,
   font-size: 0.95rem;
   margin-bottom: 2rem;
   animation: pulse 2s ease-in-out infinite;
+  text-align: center;
+  width: 100%;
 }
 
 .trailer-subtitle {
@@ -290,12 +292,19 @@ h2,
   height: 100%;
 }
 
-.wishlist-cta {
+/* Steam CTA Section - Matching News Page */
+.steam-cta-section {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
-  margin-top: 3rem;
 }
 
-.steam-button {
+.steam-wishlist-btn {
   display: inline-flex;
   align-items: center;
   gap: 1rem;
@@ -311,21 +320,22 @@ h2,
   box-shadow: 0 10px 30px rgba(27, 40, 56, 0.4);
 }
 
-.steam-button:hover {
+.steam-wishlist-btn:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(27, 40, 56, 0.6);
   background: linear-gradient(135deg, #2a475e 0%, #1b2838 100%);
 }
 
-.steam-button svg {
+.steam-wishlist-btn svg {
   width: 28px;
   height: 28px;
 }
 
 .wishlist-text {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   color: var(--text-secondary);
   font-size: 1rem;
+  max-width: 500px;
 }
 
 /* Sections */
@@ -456,6 +466,7 @@ h2,
 }
 
 .game-button {
+  display: inline-block;
   padding: 1rem 2.5rem;
   background: transparent;
   color: var(--secondary-color);
@@ -463,6 +474,7 @@ h2,
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   border-radius: 50px;
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
 }
