@@ -238,7 +238,7 @@ h2,
 /* NEW: Trailer Section */
 .trailer-section {
   background: var(--bg-dark);
-  padding: 6rem 0;
+  padding: 6rem 0 3rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -276,7 +276,7 @@ h2,
   position: relative;
   width: 100%;
   max-width: 1000px;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
   padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
   height: 0;
   border-radius: 20px;
@@ -292,16 +292,26 @@ h2,
   height: 100%;
 }
 
-/* Steam CTA Section - Matching News Page */
+/* NEW: Wishlist Section - Separate from Video */
+.wishlist-section {
+  background: var(--bg-dark);
+  padding: 3rem 0 6rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Steam CTA Section */
 .steam-cta-section {
   display: flex;
   gap: 1rem;
-  margin: 2rem auto;
+  margin: 0 auto;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
+  position: relative;
+  z-index: 100;
 }
 
 .steam-wishlist-btn {
@@ -318,6 +328,9 @@ h2,
   border-radius: 50px;
   transition: all 0.3s ease;
   box-shadow: 0 10px 30px rgba(27, 40, 56, 0.4);
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
 }
 
 .steam-wishlist-btn:hover {
