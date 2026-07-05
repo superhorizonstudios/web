@@ -1982,9 +1982,236 @@
 @media (max-width: 640px) {
   .team-card-top { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
+
+  /* ========== 2-YEAR ANNIVERSARY CELEBRATION ========== */
+  .sh-anniv-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(5,5,7,0.85);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s;
+  }
+  .sh-anniv-backdrop.sh-show { opacity: 1; visibility: visible; }
+
+  .sh-anniv-card {
+    position: relative;
+    width: min(600px, 100%);
+    max-height: 88vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: linear-gradient(165deg, var(--dark3) 0%, var(--dark2) 100%);
+    border: 1px solid rgba(192,57,43,0.3);
+    clip-path: polygon(28px 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%, 0 28px);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.65), 0 0 140px rgba(192,57,43,0.12);
+    transform: scale(0.9) translateY(24px);
+    transition: transform 0.55s cubic-bezier(.16,1,.3,1);
+  }
+  .sh-anniv-backdrop.sh-show .sh-anniv-card { transform: scale(1) translateY(0); }
+
+  .sh-anniv-bgart {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    opacity: 0.14;
+    mix-blend-mode: luminosity;
+    object-fit: cover;
+    object-position: center 20%;
+    pointer-events: none;
+  }
+  .sh-anniv-scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(5,5,7,0.35) 0%, var(--dark3) 78%);
+    pointer-events: none;
+  }
+  .sh-anniv-topline {
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--red), var(--gold), var(--red-bright), var(--gold));
+    background-size: 300% 100%;
+    animation: sh-anniv-shimmer 4s linear infinite;
+    z-index: 3;
+  }
+  @keyframes sh-anniv-shimmer { to { background-position: -300% 0; } }
+
+  .sh-anniv-close {
+    position: absolute; top: 16px; right: 16px;
+    z-index: 5;
+    width: 34px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    color: var(--gray-light);
+    font-size: 18px;
+    line-height: 1;
+    cursor: none;
+    appearance: none; -webkit-appearance: none;
+    transition: all 0.2s;
+  }
+  .sh-anniv-close:hover { color: var(--white); border-color: var(--red-bright); background: rgba(192,57,43,0.25); }
+
+  .sh-anniv-confetti { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1; }
+  .sh-anniv-bit {
+    position: absolute; top: -20px;
+    width: 6px; height: 12px;
+    opacity: 0;
+    animation: sh-anniv-fall linear forwards;
+  }
+  @keyframes sh-anniv-fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(380px) rotate(320deg); opacity: 0; }
+  }
+
+  .sh-anniv-slides { position: relative; z-index: 2; padding: 58px 44px 8px; }
+  .sh-anniv-slide { display: none; flex-direction: column; align-items: center; text-align: center; }
+  .sh-anniv-slide.sh-active { display: flex; animation: sh-anniv-fadein 0.5s ease; }
+  @keyframes sh-anniv-fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .sh-anniv-eyebrow {
+    font-family: var(--font-ui); font-size: 10px; font-weight: 700; letter-spacing: 4px;
+    color: var(--red-bright); text-transform: uppercase;
+    display: flex; align-items: center; gap: 10px; margin-bottom: 24px;
+  }
+  .sh-anniv-eyebrow::before, .sh-anniv-eyebrow::after { content: ''; width: 22px; height: 1px; background: var(--red-bright); }
+
+  .sh-anniv-num {
+    display: block;
+    font-family: var(--font-heading); font-size: clamp(100px, 24vw, 150px); line-height: 0.8;
+    background: linear-gradient(180deg, var(--gold), var(--red-bright) 85%);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 30px rgba(231,76,60,0.35));
+  }
+  .sh-anniv-num-label {
+    font-family: var(--font-ui); font-size: 14px; letter-spacing: 4px; color: var(--gray-light);
+    text-transform: uppercase; margin-top: 6px;
+  }
+  .sh-anniv-heading {
+    font-family: var(--font-display); font-weight: 900; letter-spacing: -0.5px;
+    font-size: clamp(24px, 4.2vw, 32px); text-transform: uppercase; margin: 4px 0 18px; line-height: 1.2;
+  }
+  .sh-anniv-heading span { color: var(--red-bright); }
+  .sh-anniv-body { font-size: 14.5px; line-height: 1.8; color: var(--gray-light); max-width: 420px; margin: 0 auto 8px; }
+  .sh-anniv-ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }
+
+  .sh-anniv-controls {
+    position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 24px 30px;
+  }
+  .sh-anniv-arrow {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15); background: transparent; color: var(--gray-light);
+    display: flex; align-items: center; justify-content: center; cursor: none; transition: all 0.2s; font-size: 14px;
+    appearance: none; -webkit-appearance: none;
+  }
+  .sh-anniv-arrow:hover { border-color: var(--red-bright); color: var(--white); background: rgba(192,57,43,0.15); }
+  .sh-anniv-dots { display: flex; gap: 8px; }
+  .sh-anniv-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.2);
+    cursor: none; transition: all 0.25s; border: none; padding: 0;
+    appearance: none; -webkit-appearance: none;
+  }
+  .sh-anniv-dot.sh-active { background: var(--red-bright); width: 22px; border-radius: 4px; }
+
+  .sh-anniv-badge {
+    position: fixed; bottom: 26px; right: 26px; z-index: 9500;
+    display: none; align-items: center; gap: 10px;
+    font-family: var(--font-ui); font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    color: var(--white); background: var(--red);
+    border: none; padding: 13px 20px; text-transform: uppercase;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    cursor: none; box-shadow: 0 8px 30px rgba(192,57,43,0.4);
+    animation: sh-anniv-pulse 2.4s ease-in-out infinite;
+    appearance: none; -webkit-appearance: none;
+  }
+  .sh-anniv-badge::before {
+    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--gold); box-shadow: 0 0 8px var(--gold); flex-shrink: 0;
+  }
+  .sh-anniv-badge:hover { background: var(--red-bright); }
+  @keyframes sh-anniv-pulse {
+    0%, 100% { box-shadow: 0 8px 30px rgba(192,57,43,0.4); }
+    50% { box-shadow: 0 8px 34px rgba(231,76,60,0.75); }
+  }
+
+  @media (max-width: 640px) {
+    .sh-anniv-slides { padding: 46px 24px 4px; }
+    .sh-anniv-num { font-size: clamp(76px, 28vw, 110px); }
+    .sh-anniv-body { font-size: 13.5px; }
+    .sh-anniv-badge { right: 14px; bottom: 14px; padding: 11px 16px; font-size: 9.5px; }
+    .sh-anniv-controls { padding: 18px 18px 24px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sh-anniv-topline, .sh-anniv-badge { animation: none; }
+    .sh-anniv-card, .sh-anniv-backdrop { transition: none; }
+    .sh-anniv-bit { display: none; }
+    .sh-anniv-slide.sh-active { animation: none; }
+  }
 </style>
 </head>
 <body>
+
+<!-- ========== 2 YEAR ANNIVERSARY CELEBRATION ========== -->
+<div class="sh-anniv-backdrop" id="shAnnivBackdrop" aria-hidden="true" onclick="if(event.target===this){shAnnivClose();}">
+  <div class="sh-anniv-card" role="dialog" aria-modal="true" aria-label="Superhorizon Studios 2 year anniversary">
+    <div class="sh-anniv-topline"></div>
+    <img class="sh-anniv-bgart" src="assets/header/sketchedversion.png" alt="" onerror="this.remove()">
+    <div class="sh-anniv-scrim"></div>
+    <button class="sh-anniv-close" onclick="shAnnivClose()" aria-label="Close">&times;</button>
+    <div class="sh-anniv-confetti" id="shAnnivConfetti"></div>
+
+    <div class="sh-anniv-slides">
+      <div class="sh-anniv-slide sh-active">
+        <div class="sh-anniv-eyebrow">A Milestone Unlocked</div>
+        <span class="sh-anniv-num">2</span>
+        <div class="sh-anniv-num-label">Years Of Superhorizon Studios</div>
+        <p class="sh-anniv-body" style="margin-top:18px;">Two years ago, on July 6th, 2024, two people and one idea became Superhorizon Studios. Today marks two years of building something we truly believe in.</p>
+      </div>
+
+      <div class="sh-anniv-slide">
+        <div class="sh-anniv-eyebrow">To Our Community</div>
+        <h2 class="sh-anniv-heading">Thank You For<br><span>Believing</span></h2>
+        <p class="sh-anniv-body">From our very first post to every message since, your support has shaped this studio every step of the way. Superhorizon wouldn't be what it is today without the people who believed in it from day one.</p>
+      </div>
+
+      <div class="sh-anniv-slide">
+        <div class="sh-anniv-eyebrow">The Journey So Far</div>
+        <h2 class="sh-anniv-heading">Built On Obsession,<br><span>Not Bloat</span></h2>
+        <p class="sh-anniv-body">Our mission hasn't changed since day one — no rushed releases, no feature bloat, just quality-first work we can stand behind. Two years in, that same obsession still drives everything Superhorizon builds.</p>
+      </div>
+
+      <div class="sh-anniv-slide">
+        <div class="sh-anniv-eyebrow">Here's To What's Next</div>
+        <h2 class="sh-anniv-heading">The Next Chapter<br><span>Begins</span></h2>
+        <p class="sh-anniv-body">Thank you for two incredible years with Superhorizon Studios. Here's to many more — together.</p>
+        <div class="sh-anniv-ctas">
+          <a href="https://discord.gg/ACGEA8fUAx" target="_blank" class="btn-primary"><span>Join Our Discord</span></a>
+          <a href="https://store.steampowered.com/app/4280830/Rahasya/" target="_blank" class="btn-secondary">Wishlist Rahasya</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-anniv-controls">
+      <button class="sh-anniv-arrow" onclick="shAnnivPrev()" aria-label="Previous slide">&#8249;</button>
+      <div class="sh-anniv-dots" id="shAnnivDots">
+        <button class="sh-anniv-dot sh-active" onclick="shAnnivGoTo(0, true)" aria-label="Go to slide 1"></button>
+        <button class="sh-anniv-dot" onclick="shAnnivGoTo(1, true)" aria-label="Go to slide 2"></button>
+        <button class="sh-anniv-dot" onclick="shAnnivGoTo(2, true)" aria-label="Go to slide 3"></button>
+        <button class="sh-anniv-dot" onclick="shAnnivGoTo(3, true)" aria-label="Go to slide 4"></button>
+      </div>
+      <button class="sh-anniv-arrow" onclick="shAnnivNext()" aria-label="Next slide">&#8250;</button>
+    </div>
+  </div>
+</div>
+<button class="sh-anniv-badge" id="shAnnivBadge" onclick="shAnnivOpen()" aria-label="Reopen 2 year anniversary celebration">2 Years Of Superhorizon</button>
 
 <!-- Custom Cursor -->
 <div id="cursor"></div>
@@ -3358,6 +3585,116 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  /* ---- 2-Year Anniversary: date-gated celebration slideshow ---- */
+  /* Active window: 6 Jul 2026, 12:00 IST  ->  17 Jul 2026, 12:00 IST   */
+  /* IST is UTC+5:30, so 12:00 IST = 06:30 UTC on the same calendar day */
+  var SH_START = new Date('2026-07-06T06:30:00Z').getTime();
+  var SH_END   = new Date('2026-07-17T06:30:00Z').getTime();
+  /* Add ?annivPreview=1 to the URL to force-preview it any time, for testing */
+  var SH_PREVIEW = /[?&]annivPreview=1(?:&|$)/.test(window.location.search);
+
+  var totalSlides = 4;
+  var slideIndex = 0;
+  var autoTimer = null;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function inWindow(){
+    var now = Date.now();
+    return SH_PREVIEW || (now >= SH_START && now <= SH_END);
+  }
+
+  function restartAutoplay(){
+    clearInterval(autoTimer);
+    if (reduceMotion) return;
+    autoTimer = setInterval(function(){ goTo(slideIndex + 1); }, 6000);
+  }
+
+  function goTo(i){
+    var slides = document.querySelectorAll('#shAnnivBackdrop .sh-anniv-slide');
+    var dots = document.querySelectorAll('#shAnnivDots .sh-anniv-dot');
+    if (!slides.length) return;
+    slideIndex = (i % totalSlides + totalSlides) % totalSlides;
+    slides.forEach(function(s, idx){ s.classList.toggle('sh-active', idx === slideIndex); });
+    dots.forEach(function(d, idx){ d.classList.toggle('sh-active', idx === slideIndex); });
+  }
+
+  window.shAnnivGoTo = function(i, userTriggered){
+    goTo(i);
+    if (userTriggered) restartAutoplay();
+  };
+  window.shAnnivNext = function(){ goTo(slideIndex + 1); restartAutoplay(); };
+  window.shAnnivPrev = function(){ goTo(slideIndex - 1); restartAutoplay(); };
+
+  function spawnConfetti(){
+    if (reduceMotion) return;
+    var host = document.getElementById('shAnnivConfetti');
+    if (!host || host.dataset.done) return;
+    host.dataset.done = '1';
+    var colors = ['#e74c3c', '#f39c12', '#c0392b', '#e67e22', '#f0f0f8'];
+    for (var i = 0; i < 28; i++) {
+      var b = document.createElement('span');
+      b.className = 'sh-anniv-bit';
+      b.style.left = (Math.random() * 100) + '%';
+      b.style.background = colors[i % colors.length];
+      b.style.animationDuration = (2.2 + Math.random() * 1.8) + 's';
+      b.style.animationDelay = (Math.random() * 0.7) + 's';
+      host.appendChild(b);
+    }
+  }
+
+  window.shAnnivOpen = function(){
+    var bd = document.getElementById('shAnnivBackdrop');
+    var badge = document.getElementById('shAnnivBadge');
+    if (!bd) return;
+    goTo(0);
+    bd.classList.add('sh-show');
+    bd.setAttribute('aria-hidden', 'false');
+    if (badge) badge.style.display = 'none';
+    restartAutoplay();
+    spawnConfetti();
+  };
+
+  window.shAnnivClose = function(){
+    var bd = document.getElementById('shAnnivBackdrop');
+    if (!bd) return;
+    bd.classList.remove('sh-show');
+    bd.setAttribute('aria-hidden', 'true');
+    clearInterval(autoTimer);
+    try { sessionStorage.setItem('shAnnivDismissed', '1'); } catch (e) {}
+    if (inWindow()) {
+      var badge = document.getElementById('shAnnivBadge');
+      if (badge) badge.style.display = 'flex';
+    }
+  };
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      var bd = document.getElementById('shAnnivBackdrop');
+      if (bd && bd.classList.contains('sh-show')) window.shAnnivClose();
+    }
+  });
+
+  function init(){
+    if (!inWindow()) return; // outside the celebration window: show nothing at all
+    var badge = document.getElementById('shAnnivBadge');
+    if (badge) badge.style.display = 'flex';
+    var alreadyDismissed = false;
+    try { alreadyDismissed = sessionStorage.getItem('shAnnivDismissed') === '1'; } catch (e) {}
+    if (!alreadyDismissed) {
+      setTimeout(window.shAnnivOpen, 900);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
 
 </body>
 </html>
