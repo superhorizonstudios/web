@@ -3591,7 +3591,7 @@
   /* ---- 2-Year Anniversary: date-gated celebration slideshow ---- */
   /* Active window: 6 Jul 2026, 12:00 IST  ->  17 Jul 2026, 12:00 IST   */
   /* IST is UTC+5:30, so 12:00 IST = 06:30 UTC on the same calendar day */
-  var SH_START = new Date('2026-07-06T06:30:00Z').getTime();
+ var SH_START = Date.now();
   var SH_END   = new Date('2026-07-17T06:30:00Z').getTime();
   /* Add ?annivPreview=1 to the URL to force-preview it any time, for testing */
   var SH_PREVIEW = /[?&]annivPreview=1(?:&|$)/.test(window.location.search);
